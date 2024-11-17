@@ -6,15 +6,82 @@
   <link rel="stylesheet" href="/Header/header.css">
   <link rel="stylesheet" href="/index.css">
   <title>Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body data-section="home">
   <div id="header-container"></div>
-
   <main>
-    <h1>Bienvenido al Blog de Salud y Bienestar</h1>
-    <p>Explora nuestras secciones para mejorar tu salud y estilo de vida.</p>
-  </main>
+    <div class="main-container">
+      <!-- Banner Principal -->
+      <section class="banner">
+        <blockquote>"Bienestar a tu alcance, salud en cada paso"</blockquote>
+        <img src="/Imagenes/imagen_home.jpeg" alt="Bienestar a tu alcance" />
+      </section>
 
+      <!-- Barra de búsqueda -->
+      <section class="busqueda">
+        <button>Buscar</button>
+        <input type="text" placeholder="Buscar artículos o temáticas" />
+      </section>
+
+      <!-- Últimos Artículos -->
+      <section class="ultimos-articulos">
+        <h2>Últimos artículos</h2>
+        <div class="articulos-grid">
+          <article class="articulo">
+            <h3>Consejos para reducir el consumo de azúcar</h3>
+            <img src="/Imagenes/tomando_te.png" alt="Reducir azúcar">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i> Por: Ana Martínez</span>
+              <span><i class="fas fa-eye"></i> 150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i> Guardar</span>
+            </div>
+            <p>Reducir el consumo de azúcar es clave para mejorar tu salud y bienestar. En nuestro artículo...</p>
+            <button>Leer más</button>
+          </article>
+
+          <!-- Más artículos -->
+          <article class="articulo">
+            <h3>Cómo mantenerse activo durante el día sin ir al gimnasio</h3>
+            <img src="/Imagenes/actividadfisicahome.png" alt="Mantenerse activo">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i> Por: Luis Gómez</span>
+              <span><i class="fas fa-eye"></i> 150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i> Guardar</span>
+            </div>
+            <p>Mantenerse activo sin ir al gimnasio es fácil. En nuestro artículo, te mostramos cómo...</p>
+            <button>Leer más</button>
+          </article>
+
+          <article class="articulo">
+            <h3>Cómo mantenerse activo durante el día sin ir al gimnasio</h3>
+            <img src="/Imagenes/actividadfisicahome.png" alt="Mantenerse activo">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i> Por: Carla Ruiz</span>
+              <span><i class="fas fa-eye"></i> 150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i> Guardar</span>
+            </div>
+            <p>Mantenerse activo sin ir al gimnasio es fácil. En nuestro artículo, te mostramos cómo...</p>
+            <button>Leer más</button>
+          </article>
+
+          <article class="articulo">
+            <h3>Cómo mantenerse activo durante el día sin ir al gimnasio</h3>
+            <img src="/Imagenes/actividadfisicahome.png" alt="Mantenerse activo">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i> Por: Daniela López</span>
+              <span><i class="fas fa-eye"></i> 150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i> Guardar</span>
+            </div>
+            <p>Mantenerse activo sin ir al gimnasio es fácil. En nuestro artículo, te mostramos cómo...</p>
+            <button>Leer más</button>
+          </article>
+        </div>
+      </section>
+
+
+    </div>
+  </main>
   <script src="/Header/header.js"></script>
 </body>
 </html>
