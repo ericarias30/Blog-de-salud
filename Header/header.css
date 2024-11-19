@@ -1,71 +1,97 @@
-
 /* Header principal */
 .header {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center; /* Centrar contenido del header */
     align-items: center;
     background-color: #009688; /* Fondo del header */
-    padding: 10px 20px; /* Espaciado interno */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    height: 10vh; /* Altura responsiva */
+    min-height: 80px; /* Altura mínima */
+    padding: 0; /* Sin espacio adicional */
 }
 
 /* Contenedor del contenido del header */
 .header-container {
-    display: flex; /* Asegura disposición interna */
-    justify-content: space-between; /* Espacio entre logo, navegación y botón */
+    display: flex;
+    justify-content: space-between; /* Espaciado entre elementos */
     align-items: center;
     width: 100%;
-    max-width: 1400px; /* Ancho máximo */
-    padding: 0 20px; /* Espaciado interno */
-    box-sizing: border-box; /* Incluye padding en el ancho total */
+    max-width: 1200px; /* Ancho máximo */
+    height: 100%; /* Coincide con la altura del header */
+    box-sizing: border-box; /* Evita problemas con padding */
 }
 
 /* Logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px; /* Ancho fijo */
+    height: 100%; /* Ocupa toda la altura del header */
+}
+
 .logo img {
-    height: 60px; /* Tamaño del logo */
-    max-width: 100%; /* Asegura que el logo sea responsivo */
-    background-color: white;
+    max-width: 100%; /* Escalado responsivo */
+    max-height: 80%; /* Limitar altura */
+    background-color: white; /* Fondo opcional */
     border-radius: 50px;
 }
 
 /* Navegación */
-.nav {
+nav {
     display: flex;
-    gap: 20px; /* Espacio entre enlaces */
+    height: 100%; /* Altura total del header */
 }
 
-/* Enlaces de la navegación */
+/* Enlaces de navegación */
 .nav-link {
+    display: flex;
+    justify-content: center; /* Centrar texto */
+    align-items: center;
     text-decoration: none; /* Sin subrayado */
     color: white; /* Texto blanco */
     font-weight: bold;
-    padding: 10px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s, color 0.3s; /* Efecto suave */
+    width: 120px; /* Ancho fijo */
+    height: 100%; /* Altura completa del header */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    text-align: center;
+    box-sizing: border-box; /* Incluye padding/margen en el ancho */
 }
 
-/* Efecto hover en enlaces */
+/* Hover en enlaces */
 .nav-link:hover {
-    background-color: #00796b; /* Fondo más oscuro */
-    color: #FFEB3B; /* Amarillo claro */
+    background-color: #018575; /* Fondo más oscuro */
+    
 }
 
-/* Estilo del enlace activo */
+/* Enlace activo */
 .nav-link.active {
-    background-color: #00796b; /* Color de la sección activa */
-    border-radius: 5px;
-    color: #FFEB3B; /* Amarillo */
+    background-color: #00796b; /* Fondo sección activa */
+    color: #FFEB3B; /* Texto amarillo */
 }
 
 /* Botón de inicio de sesión */
+.login {
+    display: flex;
+    justify-content: center; /* Centrar botón */
+    align-items: center;
+    width: 120px; /* Ancho fijo */
+    height: 100%; /* Ocupa toda la altura del header */
+}
+
 .login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    border: 1px solid white; /* Borde blanco */
-    padding: 5px 15px; /* Espaciado interno */
-    border-radius: 20px; /* Botón redondeado */
-    text-decoration: none; /* Sin subrayado */
+    background: none; /* Fondo transparente */
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s; /* Efecto suave */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 0.9rem; /* Tamaño de fuente */
+    height: 100%; /* Altura completa */
+    width: 100%; /* Ancho completo del contenedor */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
 }
 
 /* Hover en botón */
@@ -74,29 +100,3 @@
     color: #009688; /* Texto color header */
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-.header {
-    padding: 15px;
-}
-
-.header-container {
-    flex-direction: column; /* Header apilado */
-    align-items: center; /* Centrado */
-}
-
-.nav {
-    flex-direction: column; /* Navegación vertical */
-    gap: 10px; /* Espaciado menor */
-    margin-top: 10px;
-}
-
-.nav-link {
-    width: 100%; /* Enlaces ocupan todo el ancho */
-    text-align: center; /* Texto centrado */
-}
-
-.login-button {
-    margin-top: 10px; /* Espacio adicional */
-}
-}
