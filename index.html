@@ -27,7 +27,10 @@
       <!-- Barra de búsqueda -->
       <section class="busqueda">
         <button><i class="fas fa-search"></i>Buscar</button>
-        <input type="text" placeholder="Artículos o temáticas" />
+        <input type="text" id="search-input" placeholder="Artículos o temáticas" />
+        <div id="search-results" class="search-results" style="display: none;">
+          <!-- Resultados de búsqueda -->
+        </div>
       </section>
 
       <!-- Últimos Artículos -->
@@ -93,6 +96,7 @@
     </div>
   </main>
   <script src="/Header/header.js"></script>
+  <script src="/index.js"></script>
 </body>
 
 <footer class="footer">

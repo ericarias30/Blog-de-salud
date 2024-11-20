@@ -27,6 +27,11 @@ main {
     width: 1000px;
 }
 
+
+
+
+
+
 /* Contenedor de la barra de búsqueda */
 .busqueda {
     display: flex;
@@ -34,8 +39,8 @@ main {
     align-items: center;
     margin: 2% auto;
     width: 500px; /* Ancho total fijo */
+    position: relative; /* Necesario para posicionar los resultados de búsqueda */
 }
-
 
 /* Botón de búsqueda */
 .busqueda button {
@@ -68,6 +73,47 @@ main {
     border-radius: 0 30px 30px 0;
     font-size: 1rem;
 }
+
+/* Estilo de los resultados de búsqueda */
+.search-results {
+    border: 1px solid #ccc;
+    background-color: white;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    top: 48px; /* Ajuste para que los resultados no se solapen con el input */
+    left: 0;
+    z-index: 10;
+    display: none; /* Inicialmente oculto */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Enlaces de los resultados */
+.search-results a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hover de los resultados */
+.search-results a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo de "No se encontraron resultados" */
+.search-results p {
+    padding: 10px;
+    color: #888;
+    font-style: italic;
+}
+
+
+
+
+
+
 
 /* Contenedor principal del artículo */
 .blog-post {

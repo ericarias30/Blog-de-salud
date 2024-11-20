@@ -36,6 +36,7 @@
     max-height: 80%; /* Limitar altura */
     background-color: white; /* Fondo opcional */
     border-radius: 50px;
+    cursor: pointer;
 }
 
 /* Navegación */

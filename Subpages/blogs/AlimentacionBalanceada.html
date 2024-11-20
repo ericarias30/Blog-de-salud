@@ -17,7 +17,10 @@
             <!-- Barra de búsqueda -->
             <section class="busqueda">
                 <button><i class="fas fa-search"></i>Buscar</button>
-                <input type="text" placeholder="Artículos o temáticas" />
+                <input type="text" id="search-input" placeholder="Artículos o temáticas" />
+                <div id="search-results" class="search-results" style="display: none;">
+                <!-- Resultados de búsqueda -->
+                </div>
             </section>
             <article class="blog-post">
                 <h1>Guía completa para una alimentación balanceada</h1>
@@ -160,6 +163,7 @@
             </article>            
         </div>
     </main>
+    <script src="/index.js"></script>
     <script>
         // Cargar el header dinámicamente
         fetch('/Header/header.html')
