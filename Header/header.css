@@ -37,6 +37,12 @@
     background-color: white; /* Fondo opcional */
     border-radius: 50px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño un 10% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra */
 }
 
 /* Navegación */
