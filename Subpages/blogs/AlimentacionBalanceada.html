@@ -28,7 +28,7 @@
                 <div class="info">
                     <span class="autor"><i class="fas fa-user"></i>Ana Martínez</span>
                     <span class="eye"><i class="fas fa-eye"></i>150</span>
-                    <span class="guardar"><i class="fas fa-bookmark"></i> Guardar</span>
+                    <span class="guardar"><i class="far fa-bookmark"></i> Guardar</span>
                 </div>
                 <hr>
                 <div class="post-content">
@@ -130,8 +130,8 @@
                                     Descubre cómo hacer elecciones conscientes en tu alimentación diaria para mejorar tu salud, energía y bienestar. Aprenderás sobre los beneficios de una dieta balanceada, consejos prácticos para incorporar alimentos nutritivos y cómo pequeños cambios pueden marcar una gran diferencia en tu vida.
                                 </p>
                                 <div class="event-buttons">
-                                    <a href="#" class="btn primary">Insrcibite acá</a>
-                                    <a href="#" class="btn secondary">Compartir inscripción</a>
+                                    <a href="https://forms.gle/fyeMHPhYQfCPM1TJ8" class="btn primary" target="_blank">Inscribite acá</a>
+                                    <a class="btn secondary" id="copy-link">Compartir inscripción</a>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                     <hr>
 
                     <section class="testimonials">
-                        <h2>Testimonios de lectores</h2>
+                        <h2>Comentarios</h2>
                     
                         <!-- Contenedor de testimonios -->
                         <div id="testimonials-container">
@@ -151,7 +151,7 @@
                         <form id="testimonials-form">
                             <textarea id="testimonial-text" placeholder="Escribe tu testimonio aquí..." required></textarea>
                             <input id="testimonial-author" type="text" placeholder="Tu nombre" required />
-                            <button type="submit">Agregar testimonio</button>
+                            <button type="submit">Agregar comentario</button>
                         </form>
                     </section>
 
@@ -219,6 +219,16 @@
                 textInput.value = "";
                 authorInput.value = "";
             }
+        });
+
+
+        document.getElementById('copy-link').addEventListener('click', () => {
+            const link = "https://forms.gle/fyeMHPhYQfCPM1TJ8";
+            navigator.clipboard.writeText(link).then(() => {
+                alert('¡Enlace copiado al portapapeles!');
+            }).catch(err => {
+                console.error('Error al copiar el enlace: ', err);
+            });
         });
 
     </script>

@@ -316,6 +316,7 @@ h2 + ul {
     background-color: transparent;
     border: 2px solid #1abc9c;
     color: #16a085;
+    cursor: pointer;
 }
 
 .event-buttons .btn:hover {
