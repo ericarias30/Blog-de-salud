@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Header/header.css">
+    <link rel="stylesheet" href="/Subpages/blogs/blogs.css">
+    <title>Rutina de Ejercicios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <div class="main-container">
+            <!-- Barra de búsqueda -->
+            <section class="busqueda">
+                <button><i class="fas fa-search"></i>Buscar</button>
+                <input type="text" id="search-input" placeholder="Artículos o temáticas" />
+                <div id="search-results" class="search-results" style="display: none;">
+                <!-- Resultados de búsqueda -->
+                </div>
+            </section>
+            <article class="blog-post">
+                <h1>Rutina de ejercicios para adolescentes</h1>
+                
+                <div class="post-image">
+                    <img src="/Imagenes/rutinadegymadolescentes.png" alt="rutinas ejercicios">
+                </div>
+                <div class="info">
+                    <span class="autor"><i class="fas fa-user"></i>Juan Luna</span>
+                    <span class="eye"><i class="fas fa-eye"></i>3</span>
+                    <span class="guardar"><i class="far fa-bookmark"></i> Guardar</span>
+                </div>
+                <hr>
+                <div class="post-content">
+                    <p>
+                        Para armar un blog sobre rutinas de ejercicios para adolescentes, es importante enfocarse en ejercicios que sean adecuados para su edad, que promuevan el desarrollo muscular, la flexibilidad y la resistencia cardiovascular sin causar lesiones. A continuación te doy algunas recomendaciones de rutinas, imágenes y videos que puedes incluir en tu blog.
+                    </p>
+            
+                    <!-- Sección: Introducción con imagen -->
+                    <h2>Rutinas de ejercicios para adolescentes</h2>
+                    <h4>Rutina 1: Ejercicio de Fuerza</h4>
+                    <ul>
+                        <li>Flexiones: 3 series de 10-15 repeticiones.</li>
+                        <li>Sentadillas: 3 series de 15 repeticiones.</li>
+                        <li>Plancha: Mantener 30-60 segundos, 3 veces.</li>
+                    </ul>
+
+                    <h4>Rutina 2: Ejercicio de fuerza</h4>
+                    <ul>
+                        <li>Correr: 20-30 minutos, 3-4 veces por semana.</li>
+                        <li>Burpees: 3 series de 10-12 repeticiones.</li>
+                    </ul>
+
+                    <h4>Rutina 3: Ejercicio de estiramientos</h4>
+                    <ul>
+                        <li>Estiramiento de piernas: Mantener 30 segundos por pierna.</li>
+                        <li>Estiramiento de cuádriceps: Mantener 30 segundos por pierna.</li>
+                    </ul>
+
+                    <div class="post-media">
+                        <iframe width="800" height="450" src="https://www.youtube.com/embed/KddWUbmolfI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <span class="caption">Explicación de rutinas de los ejercicios mencionados</span>
+                        <a href="https://open.spotify.com/intl-es/album/2OP5PbJoYsnmNMrTfy80CD?si=KZwVnEnWSl-OxYcTcLF0SA" target="_blank">¡Escucha mi playlist para entrenar en Spotify!</a>
+                    </div>
+
+                    <h2>Coclusión:</h2>
+                    <p>Adoptar una rutina de ejercicios regular es fundamental para el desarrollo físico y emocional de los adolescentes. No solo ayuda a mejorar la fuerza, resistencia y flexibilidad, sino que también reduce el estrés, mejora el estado de ánimo y aumenta la concentración. Recuerda que es importante elegir actividades que te gusten y que puedas disfrutar, ya sea practicar deportes, hacer entrenamiento en casa o actividades al aire libre. Asegúrate de calentar antes de cada sesión y de enfriar después para evitar lesiones.
+
+                        Lo más importante es que mantengas la constancia y disfrutes del proceso. ¡Haz del ejercicio una parte de tu estilo de vida y verás cómo te ayuda a sentirte mejor tanto por dentro como por fuera!</p>
+                    
+
+                    <hr>
+
+                    <section class="testimonials">
+                        <h2>Comentarios</h2>
+                    
+                        <!-- Contenedor de testimonios -->
+                        <div id="testimonials-container">
+                            <!-- Los testimonios dinámicos se insertarán aquí -->
+                        </div>
+                    
+                        <!-- Formulario para agregar un nuevo testimonio -->
+                        <form id="testimonials-form">
+                            <textarea id="testimonial-text" placeholder="Escribe tu testimonio aquí..." required></textarea>
+                            <input id="testimonial-author" type="text" placeholder="Tu nombre" required />
+                            <button type="submit">Agregar comentario</button>
+                        </form>
+                    </section>
+
+
+                </div>
+            </article>            
+        </div>
+    </main>
+    <script src="/index.js"></script>
+    <script>
+        // Cargar el header dinámicamente
+        fetch('/Header/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header-container').innerHTML = html;
+            })
+            .catch(error => console.error('Error al cargar el header:', error));
+    </script>
+
+    <script>
+        // Seleccionar elementos
+        const form = document.getElementById("testimonials-form");
+        const testimonialsContainer = document.getElementById("testimonials-container");
+        const textInput = document.getElementById("testimonial-text");
+        const authorInput = document.getElementById("testimonial-author");
+
+        // Cargar testimonios del localStorage
+        document.addEventListener("DOMContentLoaded", loadTestimonials);
+
+        function loadTestimonials() {
+            const testimonials = JSON.parse(localStorage.getItem("testimonials")) || [];
+            testimonials.forEach(({ text, author }) => {
+                addTestimonialToDOM(text, author);
+            });
+        }
+
+        // Agregar un testimonio al DOM
+        function addTestimonialToDOM(text, author) {
+            const blockquote = document.createElement("blockquote");
+            blockquote.innerHTML = `
+                <p>${text}</p>
+                <footer>— ${author}</footer>
+            `;
+            testimonialsContainer.appendChild(blockquote);
+        }
+
+        // Guardar el testimonio en localStorage
+        function saveTestimonial(text, author) {
+            const testimonials = JSON.parse(localStorage.getItem("testimonials")) || [];
+            testimonials.push({ text, author });
+            localStorage.setItem("testimonials", JSON.stringify(testimonials));
+        }
+
+        // Manejar el envío del formulario
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const text = textInput.value.trim();
+            const author = authorInput.value.trim();
+
+            if (text && author) {
+                // Agregar al DOM y guardar en localStorage
+                addTestimonialToDOM(text, author);
+                saveTestimonial(text, author);
+
+                // Limpiar formulario
+                textInput.value = "";
+                authorInput.value = "";
+            }
+        });
+
+
+        document.getElementById('copy-link').addEventListener('click', () => {
+            const link = "https://forms.gle/fyeMHPhYQfCPM1TJ8";
+            navigator.clipboard.writeText(link).then(() => {
+                alert('¡Enlace copiado al portapapeles!');
+            }).catch(err => {
+                console.error('Error al copiar el enlace: ', err);
+            });
+        });
+
+    </script>
+    <footer>
+        <p>© 2024 Blog Alimentación</p>
+    </footer>
+</body>
+</html>

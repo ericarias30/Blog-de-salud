@@ -192,6 +192,11 @@ hr{
     color: #1abc9c;
 }
 
+.post-content h4, h3 {
+    margin-top: 2rem;
+    color: #1abc9c;
+}
+
 /* Párrafos */
 .post-content p {
     font-size: 1rem;
