@@ -4,17 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Header/header.css">
-  <link rel="stylesheet" href="/Subpages/Styles/salud_mental.css">
-  <title>Salud Mental</title>
+  <link rel="stylesheet" href="/index.css">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+
 </head>
-<body data-section="salud-mental">
+<body data-section="saludmental">
   <div id="header-container"></div>
-
   <main>
-    <h1>Página de Salud Mental</h1>
-    <p>Contenido sobre salud mental...</p>
-  </main>
+    <div class="main-container">
+      <!-- Barra de búsqueda -->
+      <section class="busqueda">
+        <button><i class="fas fa-search"></i>Buscar</button>
+        <input type="text" placeholder="Artículos o temáticas" />
+      </section>
 
+      <!-- Últimos Artículos -->
+      <section class="ultimos-articulos">
+        <h2>Últimos artículos</h2>
+        <div class="articulos-grid">
+
+          <article class="articulo">
+            <h3>Consejos para dormir mejor y aumentar tu energía</h3>
+            <img src="/Imagenes/mujer_durmiendo.png" alt="Aumentar energía">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i>Carla Ruiz</span>
+              <span><i class="fas fa-eye"></i>150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <hr>
+            <p>Dormir mejor y aumentar tu energía es más sencillo de lo que piensas. En nuestro artículo, te damos consejos prácticos como establecer una rutina de sueño, crear un ambiente relajante y evitar la cafeína antes de dormir. ¡Descubre cómo mejorar tu descanso y sentirte más energizado durante el día!</p>
+            <button>Leer más</button>
+          </article>
+
+          <article class="articulo">
+            <h3>Técnicas de respiración para calmar la ansiedad</h3>
+            <img src="/Imagenes/tecnicasansiedad.png" alt="Calmar la ansiedad">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i>Daniela López</span>
+              <span><i class="fas fa-eye"></i>150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <hr>
+            <p>Las técnicas de respiración son una herramienta eficaz para calmar la ansiedad. En nuestro artículo, te mostramos cómo practicar la respiración profunda, la respiración abdominal y la respiración 4-7-8 para reducir el estrés y encontrar calma en momentos difíciles.</p>
+            <button>Leer más</button>
+          </article>
+        </div>
+      </section>
+
+
+    </div>
+  </main>
   <script src="/Header/header.js"></script>
 </body>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2024 Todos los derechos reservados.</p>
+    <nav class="footer-links">
+      <a href="#condiciones">Condiciones de uso</a> |
+      <a href="#privacidad">Declaración de privacidad</a> |
+      <a href="#consentimiento">Cookies</a> |
+      <a href="#funciona">Cómo funciona</a> |
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+  </div>
+</footer>
+
 </html>

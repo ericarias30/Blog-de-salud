@@ -100,3 +100,63 @@ nav {
     color: #009688; /* Texto color header */
 }
 
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ajustar altura del header */
+    .header {
+        
+    }
+
+    /* Ajustar tamaño del logo */
+    .logo {
+        width: 80px; /* Reducir el ancho del logo */
+    }
+    .logo img {
+        max-height: 70%; /* Ajustar altura del logo */
+    }
+
+    /* Ajustar los enlaces de navegación */
+    .nav-link {
+        width: 100px; /* Reducir el ancho de los enlaces */
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente */
+    }
+
+    /* Ajustar el tamaño del botón de inicio de sesión */
+    .login {
+        width: 100px; /* Reducir el ancho del botón */
+    }
+    .login-button {
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente */
+    }
+}
+
+/* Responsividad para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    /* Ajustar altura del header */
+    .header {
+        
+    }
+
+    /* Ajustar tamaño del logo */
+    .logo {
+        width: 60px; /* Reducir aún más el ancho del logo */
+    }
+    .logo img {
+        max-height: 60%; /* Reducir aún más la altura del logo */
+    }
+
+    /* Ajustar los enlaces de navegación */
+    .nav-link {
+        width: 80px; /* Reducir el ancho de los enlaces */
+        font-size: 0.7rem; /* Reducir aún más el tamaño de la fuente */
+    }
+
+    /* Ajustar el tamaño del botón de inicio de sesión */
+    .login {
+        width: 80px; /* Reducir el ancho del botón */
+    }
+    .login-button {
+        font-size: 0.7rem; /* Reducir aún más el tamaño de la fuente */
+    }
+}

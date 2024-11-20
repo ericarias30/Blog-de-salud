@@ -4,17 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Header/header.css">
-  <link rel="stylesheet" href="/Subpages/Styles/ejercicio.css">
-  <title>Ejercicio</title>
+  <link rel="stylesheet" href="/index.css">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+
 </head>
 <body data-section="ejercicio">
   <div id="header-container"></div>
-
   <main>
-    <h1>Página de Ejercicio</h1>
-    <p>Contenido sobre ejercicio físico...</p>
-  </main>
+    <div class="main-container">
+      <!-- Barra de búsqueda -->
+      <section class="busqueda">
+        <button><i class="fas fa-search"></i>Buscar</button>
+        <input type="text" placeholder="Artículos o temáticas" />
+      </section>
 
+      <!-- Últimos Artículos -->
+      <section class="ultimos-articulos">
+        <h2>Últimos artículos</h2>
+        <div class="articulos-grid">
+
+          <!-- Más artículos -->
+          <article class="articulo">
+            <h3>Cómo mantenerse activo durante el día sin ir al gimnasio</h3>
+            <img src="/Imagenes/actividadfisicahome.png" alt="Mantenerse activo">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i>Luis Gómez</span>
+              <span><i class="fas fa-eye"></i>150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <hr>
+            <p>Mantenerse activo sin ir al gimnasio es fácil. En nuestro artículo, te mostramos cómo incorporar ejercicio en tu día a día con actividades simples como caminar más, subir escaleras o hacer estiramientos. ¡Descubre cómo puedes mantenerte en forma sin salir de casa!</p>
+            <button>Leer más</button>
+          </article>
+
+          <article class="articulo">
+            <h3>Rutina de ejercicios para adolescentes</h3>
+            <img src="/Imagenes/rutinadegymadolescentes.png" alt="rutinas de ejercicios">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i>Juan Luna</span>
+              <span><i class="fas fa-eye"></i>150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <hr>
+            <p>Una rutina de ejercicios para adolescentes debe incluir cardio, fuerza y flexibilidad para mejorar la resistencia y tonificar los músculos. Es importante hacer los ejercicios de manera progresiva y divertida, con énfasis en la técnica para evitar lesiones.</p>
+            <button>Leer más</button>
+          </article>
+
+          <article class="articulo">
+            <h3>5 Ejercicios de estiramiento para mejorar la flexibilidad</h3>
+            <img src="/Imagenes/ejerciciosdeestiramientos.png" alt="flexibilidad">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i>Leonardo Ponce</span>
+              <span><i class="fas fa-eye"></i>150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <hr>
+            <p>5 ejercicios de estiramiento para mejorar la flexibilidad, trabajando piernas, espalda, caderas y hombros. Ayudan a aumentar la movilidad y prevenir lesiones. ¡Ideal para incorporar en tu rutina diaria!</p>
+            <button>Leer más</button>
+          </article>
+        </div>
+      </section>
+
+
+    </div>
+  </main>
   <script src="/Header/header.js"></script>
 </body>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2024 Todos los derechos reservados.</p>
+    <nav class="footer-links">
+      <a href="#condiciones">Condiciones de uso</a> |
+      <a href="#privacidad">Declaración de privacidad</a> |
+      <a href="#consentimiento">Cookies</a> |
+      <a href="#funciona">Cómo funciona</a> |
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+  </div>
+</footer>
+
 </html>

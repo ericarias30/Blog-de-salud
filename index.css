@@ -6,25 +6,30 @@
 }
 
 body {
-font-family: Arial, sans-serif;
-background-color: #f7f9fb;
-color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fb;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
 }
 
 main {
-max-width: 1200px;
-margin: 0 auto; /* Centrar el main */
+    max-width: 1200px;
+    margin: 0 auto; /* Centrar el main */
+    flex-grow: 1; /* Permite que el contenido crezca y empuje el footer hacia abajo */
 }
 
 .main-container {
-background-color: white;
+    padding-top: 2%;
+    background-color: white;
+    font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
 }
 
 /* Banner */
 .banner {
-position: relative;
-text-align: center;
-
+    position: relative;
+    text-align: center;
 }
 
 .banner blockquote {
@@ -49,9 +54,9 @@ text-align: center;
     margin-bottom: 0;
 }
 
-hr{
+.main-container hr {
     margin: 0 auto;
-    width: 1000px;
+    width: 80%;
 }
 
 /* Contenedor de la barra de búsqueda */
@@ -59,7 +64,7 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
+    margin: 2% auto;
     width: 500px; /* Ancho total fijo */
 }
 
@@ -95,10 +100,11 @@ hr{
     font-size: 1rem;
 }
 
-/* Últimos Artículos */
+/* General */
 .ultimos-articulos {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 2%;
 }
 
 .ultimos-articulos h2 {
@@ -107,53 +113,201 @@ hr{
     color: #2c3e50;
 }
 
+/* Grilla */
 .articulos-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px;
+    align-items: stretch; /* Estira las tarjetas */
 }
 
 @media (max-width: 768px) {
-.articulos-grid {
-    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-}
+    .articulos-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
 }
 
+/* Tarjetas */
 .articulo {
-background-color: white;
-border: 1px solid #ddd;
-border-radius: 10px;
-overflow: hidden;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border: 2px solid transparent; /* Cambiar borde para destacar */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Apilar contenido */
+    justify-content: space-between; /* Espaciar elementos */
+    align-items: stretch;
+    text-align: center;
+    height: 100%;
+    transition: border-color 0.3s ease; /* Efecto hover */
+    padding: 1%;
 }
 
 .articulo h3 {
     font-size: 1.2rem;
-    margin: 15px;
+    margin: 5px 10px;
     color: #34495e;
+    word-wrap: break-word;
+    min-height: 3em; /* Consistencia en altura */
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
 }
 
+/* Imagen */
 .articulo img {
-width: 100%;
-height: 200px; /* Tamaño fijo */
-object-fit: cover; /* Adaptar imagen */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 80%; /* Ajusta el ancho relativo con padding */
+    height: 200px; /* Tamaño fijo */
+    object-fit: cover; /* Escala la imagen para llenar el espacio */
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+    display: block; /* Para evitar problemas de alineación */
 }
 
-.articulo p {
-font-size: 0.9rem;
-margin: 0 15px 15px;
-color: #7f8c8d;
-}
-
+/* Información */
 .info {
-display: flex;
-justify-content: space-between;
-align-items: center;
-font-size: 0.8rem;
-margin: 0 15px 15px;
-color: #95a5a6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: black;
+    width: 80%; /* Coincide con el ancho de la imagen */
+    box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho */
+    margin: 2% auto; /* Centra el bloque de información */
 }
 
 .info i {
-margin-right: 5px;
+    margin-right: 5px; /* Espaciado entre el ícono y el texto dentro de cada `span` */
+}
+
+.articulo hr {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.articulo p {
+    width: 90%;
+    margin: 10px auto; /* Centrar el párrafo horizontalmente */
+    font-size: 0.9rem;
+    color: #484f50;
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif; /* Aplica la fuente Open Sans */
+}
+
+
+/* Botón */
+.articulo button {
+    display: block;
+    margin: 2% auto 2%;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.articulo button:hover {
+    background-color: #16a085;
+}
+
+.footer {
+    background-color: #009688; /* Color similar al que se ve en la imagen */
+    color: white;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    display: flex; /* Usar flexbox para centrar el contenido */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    display: flex; /* Usar flexbox para alinear los elementos */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+}
+
+.footer p {
+    margin: 5px 0; /* Espaciado entre texto y enlaces */
+}
+
+.footer-links {
+    margin-top: 5px;
+    display: flex; /* Asegurar que los enlaces estén en fila */
+    justify-content: center; /* Centrar los enlaces horizontalmente */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsividad para el banner */
+@media (max-width: 768px) {
+    .banner img {
+        width: 100%; /* Hacer que la imagen ocupe el 100% del ancho */
+        height: auto; /* Ajustar la altura proporcionalmente */
+    }
+
+    .banner blockquote {
+        width: 80%; /* Reducir el ancho del blockquote */
+        font-size: 1.2rem; /* Ajustar el tamaño de la fuente */
+        bottom: 20px; /* Separar un poco más el blockquote de la imagen */
+    }
+
+    .main-container hr {
+        width: 90%; /* Ajustar el ancho de la línea horizontal */
+    }
+
+    /* Ajustar la barra de búsqueda */
+    .busqueda {
+        width: 90%; /* Hacer que la barra de búsqueda ocupe un ancho relativo */
+    }
+
+    .busqueda button {
+        width: 120px; /* Reducir el ancho del botón */
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    }
+
+    .busqueda input {
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    }
+
+    /* Ajustar el footer */
+    .footer-container {
+        max-width: 100%; /* Hacer que el footer ocupe el 100% del ancho */
+        padding: 0 15px; /* Agregar algo de espacio en los bordes */
+    }
+
+    .footer p {
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente */
+    }
+
+    .footer-links a {
+        font-size: 0.9rem; /* Ajustar el tamaño de los enlaces */
+    }
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .footer p {
+        font-size: 0.7rem; /* Reducir aún más el tamaño de la fuente */
+    }
+
+    .footer-links a {
+        font-size: 0.8rem; /* Reducir el tamaño de los enlaces */
+    }
 }

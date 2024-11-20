@@ -4,17 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/Header/header.css">
-  <link rel="stylesheet" href="/Subpages/Styles/salud_mental.css">
-  <title>Nutrición</title>
+  <link rel="stylesheet" href="/index.css">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+
 </head>
 <body data-section="nutricion">
   <div id="header-container"></div>
-
   <main>
-    <h1>Nutrición</h1>
-    <p>Consejos y recursos para una alimentación saludable.</p>
-  </main>
+    <div class="main-container">
 
+      <!-- Barra de búsqueda -->
+      <section class="busqueda">
+        <button><i class="fas fa-search"></i>Buscar</button>
+        <input type="text" placeholder="Artículos o temáticas" />
+      </section>
+
+      <!-- Últimos Artículos -->
+      <section class="ultimos-articulos">
+        <h2>Últimos artículos</h2>
+        <div class="articulos-grid">
+          <article class="articulo">
+            <h3>Consejos para reducir el consumo de azúcar</h3>
+            <img src="/Imagenes/tomando_te.png" alt="Reducir azúcar">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i>Ana Martínez</span>
+              <span><i class="fas fa-eye"></i>150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <hr>
+            <p>Reducir el consumo de azúcar es clave para mejorar tu salud y bienestar. En nuestro artículo, te damos consejos prácticos como elegir alimentos naturales, leer etiquetas y evitar bebidas azucaradas. ¡Descubre cómo hacerlo y mejora tu energía de forma fácil y efectiva!</p>
+            <button>Leer más</button>
+          </article>
+
+          <!-- Más artículos -->
+          <article class="articulo">
+            <h3>Guia completa para una alimentación balanceada</h3>
+            <img src="/Imagenes/alimentacion_balanceada.png" alt="Alimentación balanceada">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i>Luis Gómez</span>
+              <span><i class="fas fa-eye"></i>150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <hr>
+            <p>Descubre los secretos de una alimentación balanceada y cómo influye en tu bienestar. Esta guía te brindará consejos prácticos para equilibrar tus comidas, mejorar tu salud y sentirte con más energía cada día. ¡Empieza hoy a crear hábitos saludables que cambiarán tu vida!</p>
+            <a href="/Subpages/blogs/AlimentacionBalanceada.html"><button>Leer más</button></a>
+          </article>
+
+          <article class="articulo">
+            <h3>¿Qué comer para dormir mejor? Alimentos que favorecen el sueño</h3>
+            <img src="/Imagenes/alimentosparadormirmejor.png" alt="Alimentos para sueño">
+            <div class="info">
+              <span class="autor"><i class="fas fa-user"></i>Carla Ruiz</span>
+              <span><i class="fas fa-eye"></i>150</span>
+              <span class="guardar"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <hr>
+            <p>¿Te cuesta dormir bien? Conoce los alimentos que pueden ayudarte a relajarte y mejorar la calidad de tu sueño. Descubre cómo una nutrición adecuada puede ser la clave para noches más reparadoras y energizantes. ¡Duerme mejor y despierta lleno de vitalidad!</p>
+            <button>Leer más</button>
+          </article>
+
+        </div>
+      </section>
+
+
+    </div>
+  </main>
   <script src="/Header/header.js"></script>
 </body>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2024 Todos los derechos reservados.</p>
+    <nav class="footer-links">
+      <a href="#condiciones">Condiciones de uso</a> |
+      <a href="#privacidad">Declaración de privacidad</a> |
+      <a href="#consentimiento">Cookies</a> |
+      <a href="#funciona">Cómo funciona</a> |
+      <a href="#contacto">Contáctanos</a>
+    </nav>
+  </div>
+</footer>
+
 </html>
