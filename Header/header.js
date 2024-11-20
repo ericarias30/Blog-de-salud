@@ -19,3 +19,9 @@ fetch("../Header/header.html") // Si estás en una subcarpeta como Subpages.
     })
     .catch((error) => console.error("Error al cargar el header:", error));
 });
+
+
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
