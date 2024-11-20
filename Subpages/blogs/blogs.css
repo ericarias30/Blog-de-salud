@@ -459,3 +459,46 @@ blockquote footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al hover */
 }
 
+
+.footer {
+    background-color: #009688; /* Color similar al que se ve en la imagen */
+    color: white;
+    padding: 15px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Cambiado para apilar los elementos verticalmente */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Cambiar la dirección a columna */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    margin: 0; /* Eliminar margen para un mejor espaciado */
+    padding-bottom: 10px; /* Espacio debajo del párrafo */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center; /* Centrar los enlaces horizontalmente */
+    margin-top: 5px; /* Espacio entre el párrafo y los enlaces */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px; /* Espacio entre los enlaces */
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

@@ -1,9 +1,16 @@
 // Datos simulados de resultados de búsqueda (puedes reemplazarlos por datos reales o hacer una llamada a un servidor)
 const results = [
     { name: 'Nutrición para principiantes', link: '/Subpages/nutricion.html' },
-    { name: 'Ejercicio para todos', link: '/Subpages/ejercicio.html' },
+    { name: 'Ejercicios para todos', link: '/Subpages/ejercicio.html' },
     { name: 'Salud Mental y bienestar', link: '/Subpages/salud_mental.html' },
     { name: 'Alimentos balanceados', link: '/Subpages/blogs/AlimentacionBalanceada.html' },
+    { name: 'Alimentos para dormir mejor ', link: '/Subpages/blogs/AlimentosParaDormirMejor.html' },
+    { name: 'Como mantenerse activo ', link: '/Subpages/blogs/ComoMantenerseActivo.html' },
+    { name: 'Consejos para dormir mejor ', link: '/Subpages/blogs/Consejosparadormirmejor.html' },
+    { name: 'Ejercicios de estiramiento', link: '/Subpages/blogs/EjerciciosdeEstiramiento.html' },
+    { name: 'Reducir el consumo de azúcar', link: '/Subpages/blogs/ReducirElConsumoAzucar.html' },
+    { name: 'Rutina de ejercicios', link: '/Subpages/blogs/rutinadeejercicios.html' },
+    { name: 'Tecnicas de respiración', link: '/Subpages/blogs/TecnicasdeRespiracion.html' },
     
     // Agrega más resultados según sea necesario
 ];
