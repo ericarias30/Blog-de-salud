@@ -37,7 +37,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2% auto;
+    margin: 0 auto;
     width: 500px; /* Ancho total fijo */
     position: relative; /* Necesario para posicionar los resultados de búsqueda */
 }
@@ -128,7 +128,7 @@ main {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color: #005249;
+    color: #2c3e50;
 }
 
 /* Imagen destacada del post */
