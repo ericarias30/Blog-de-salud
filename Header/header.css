@@ -2,24 +2,26 @@
 .header {
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center; /* Centrar contenido del header */
+    justify-content: center;
     align-items: center;
-    background-color: #009688; /* Fondo del header */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    height: 10vh; /* Altura responsiva */
-    min-height: 80px; /* Altura mínima */
-    padding: 0; /* Sin espacio adicional */
+    background-color: #009688;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 10vh; /* Ajusta esta altura según sea necesario */
+    min-height: 80px;
+    padding: 0;
+    position: relative; /* Posición relativa para servir de referencia al menú móvil */
+    z-index: 1000;
 }
 
 /* Contenedor del contenido del header */
 .header-container {
     display: flex;
-    justify-content: space-between; /* Espaciado entre elementos */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Ancho máximo */
-    height: 100%; /* Coincide con la altura del header */
-    box-sizing: border-box; /* Evita problemas con padding */
+    max-width: 1200px;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 /* Logo */
@@ -27,64 +29,60 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px; /* Ancho fijo */
-    height: 100%; /* Ocupa toda la altura del header */
+    width: 120px;
+    height: 100%;
 }
 
 .logo img {
-    max-width: 100%; /* Escalado responsivo */
-    max-height: 80%; /* Limitar altura */
-    background-color: white; /* Fondo opcional */
+    max-width: 100%;
+    max-height: 80%;
     border-radius: 50px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
 }
 
 .logo img:hover {
-    transform: scale(1.1); /* Aumenta el tamaño un 10% */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra */
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Navegación */
-nav {
+/* Navegación - Pantallas grandes */
+.desktop-nav {
     display: flex;
-    height: 100%; /* Altura total del header */
+    height: 100%;
 }
 
-/* Enlaces de navegación */
 .nav-link {
     display: flex;
-    justify-content: center; /* Centrar texto */
+    justify-content: center;
     align-items: center;
-    text-decoration: none; /* Sin subrayado */
-    color: white; /* Texto blanco */
+    text-decoration: none;
+    color: white;
     font-weight: bold;
-    width: 120px; /* Ancho fijo */
-    height: 100%; /* Altura completa del header */
-    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    width: 120px;
+    height: 100%;
+    transition: background-color 0.3s, color 0.3s;
     text-align: center;
-    box-sizing: border-box; /* Incluye padding/margen en el ancho */
+    box-sizing: border-box;
 }
 
-/* Hover en enlaces */
 .nav-link:hover {
-    background-color: #018575; /* Fondo más oscuro */
-    
+    background-color: #018575;
 }
 
-/* Enlace activo */
 .nav-link.active {
-    background-color: #00796b; /* Fondo sección activa */
-    color: #FFEB3B; /* Texto amarillo */
+    background-color: #00796b;
+    color: #FFEB3B;
 }
 
-/* Botón de inicio de sesión */
-.login {
+/* Botón de inicio de sesión - Pantallas grandes */
+.desktop-login {
     display: flex;
-    justify-content: center; /* Centrar botón */
+    justify-content: center;
     align-items: center;
-    width: 120px; /* Ancho fijo */
-    height: 100%; /* Ocupa toda la altura del header */
+    width: 120px;
+    height: 100%;
 }
 
 .login-button {
@@ -92,78 +90,181 @@ nav {
     justify-content: center;
     align-items: center;
     color: white;
-    background: none; /* Fondo transparente */
+    background: none;
     font-weight: bold;
-    text-decoration: none; /* Sin subrayado */
-    font-size: 0.9rem; /* Tamaño de fuente */
-    height: 100%; /* Altura completa */
-    width: 100%; /* Ancho completo del contenedor */
-    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    text-decoration: none;
+    font-size: 0.9rem;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover en botón */
 .login-button:hover {
-    background-color: white; /* Fondo blanco */
-    color: #009688; /* Texto color header */
+    background-color: white;
+    color: #009688;
 }
 
+/* Menú hamburguesa - Pantallas pequeñas */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    transition: width 0.3s ease, height 0.3s ease;
+}
 
-/* Responsividad para pantallas pequeñas */
+.hamburger-menu .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* Estilo para la navegación móvil */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute; /* Permite posicionarlo respecto al header */
+    top: 100%; /* Asegura que se coloque justo debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: #009688;
+    z-index: 999; /* Asegura que esté encima de otros elementos si es necesario */
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra para separarlo visualmente */
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav .nav-link {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+}
+
+.mobile-nav .login-button {
+    background-color: white;
+    color: #009688;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 50%;
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
-    /* Ajustar altura del header */
+    .desktop-nav,
+    .desktop-login {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
     .header {
-        
+        height: 8vh;
     }
 
-    /* Ajustar tamaño del logo */
+    /* Contenedor del contenido del header */
+    .header-container {
+        padding: 0 5px;
+    }
+
+    /* Logo */
     .logo {
-        width: 80px; /* Reducir el ancho del logo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 100%;
     }
+
     .logo img {
-        max-height: 70%; /* Ajustar altura del logo */
-    }
-
-    /* Ajustar los enlaces de navegación */
-    .nav-link {
-        width: 100px; /* Reducir el ancho de los enlaces */
-        font-size: 0.8rem; /* Reducir el tamaño de la fuente */
-    }
-
-    /* Ajustar el tamaño del botón de inicio de sesión */
-    .login {
-        width: 100px; /* Reducir el ancho del botón */
-    }
-    .login-button {
-        font-size: 0.8rem; /* Reducir el tamaño de la fuente */
+        max-width: 100%;
+        max-height: 80%;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 }
 
-/* Responsividad para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    /* Ajustar altura del header */
-    .header {
-        
-    }
 
-    /* Ajustar tamaño del logo */
-    .logo {
-        width: 60px; /* Reducir aún más el ancho del logo */
-    }
-    .logo img {
-        max-height: 60%; /* Reducir aún más la altura del logo */
-    }
 
-    /* Ajustar los enlaces de navegación */
-    .nav-link {
-        width: 80px; /* Reducir el ancho de los enlaces */
-        font-size: 0.7rem; /* Reducir aún más el tamaño de la fuente */
-    }
 
-    /* Ajustar el tamaño del botón de inicio de sesión */
-    .login {
-        width: 80px; /* Reducir el ancho del botón */
-    }
-    .login-button {
-        font-size: 0.7rem; /* Reducir aún más el tamaño de la fuente */
-    }
+/* Popups */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.popup-content form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.popup-content form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.popup-content button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup-content button:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: red;
 }

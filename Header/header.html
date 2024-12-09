@@ -1,22 +1,75 @@
-
-
 <div id="header-component" class="header">
     <div class="header-container">
+        <!-- Logo -->
         <div class="logo" onclick="window.location.href='/index.html';">
             <img src="/Imagenes/icono-sinfondo.png" alt="Logo">
         </div>
 
-        <!-- Enlaces del menú -->
-        <nav class="nav-links">
+        <!-- Enlaces para pantallas grandes -->
+        <nav class="nav-links desktop-nav">
             <a href="/index.html" class="nav-link" data-section="home">Inicio</a>
             <a href="/Subpages/nutricion.html" class="nav-link" data-section="nutricion">Nutrición</a>
             <a href="/Subpages/ejercicio.html" class="nav-link" data-section="ejercicio">Ejercicio</a>
             <a href="/Subpages/salud_mental.html" class="nav-link" data-section="saludmental">Salud Mental</a>
         </nav>
 
+        <!-- Botón de inicio de sesión o cierre de sesión -->
         <div class="login">
-            <a href="/" class="login-button">Iniciar sesión</a>
+            <a href="javascript:void(0)" class="login-button" onclick="toggleLoginLogout()">Iniciar sesión</a>
         </div>
+
+        <!-- Botón de menú hamburguesa para pantallas pequeñas -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Menú hamburguesa para pantallas pequeñas -->
+        <nav class="nav-links mobile-nav">
+            <a href="/index.html" class="nav-link" data-section="home">Inicio</a>
+            <a href="/Subpages/nutricion.html" class="nav-link" data-section="nutricion">Nutrición</a>
+            <a href="/Subpages/ejercicio.html" class="nav-link" data-section="ejercicio">Ejercicio</a>
+            <a href="/Subpages/salud_mental.html" class="nav-link" data-section="saludmental">Salud Mental</a>
+            <a href="javascript:void(0)" class="nav-link login-button" onclick="toggleLoginLogout()">Iniciar sesión</a>
+        </nav>
     </div>
 </div>
 
+<!-- Ventana emergente de inicio de sesión -->
+<div id="login-popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('login-popup')">&times;</span>
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form">
+            <label for="login-email">Correo Electrónico:</label>
+            <input type="email" id="login-email" required>
+            <label for="login-password">Contraseña:</label>
+            <input type="password" id="login-password" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p class="switch-popup">
+            ¿No tienes una cuenta? <a href="javascript:void(0)" onclick="closePopup('login-popup'); openPopup('register-popup')">Regístrate aquí</a>
+        </p>
+    </div>
+</div>
+
+<!-- Ventana emergente de registro -->
+<div id="register-popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('register-popup')">&times;</span>
+        <h2>Registro</h2>
+        <form id="register-form">
+            <label for="register-email">Correo Electrónico:</label>
+            <input type="email" id="register-email" required>
+            <label for="register-name">Nombre:</label>
+            <input type="text" id="register-name" required>
+            <label for="register-password">Contraseña:</label>
+            <input type="password" id="register-password" required>
+            <button type="submit">Registrarse</button>
+        </form>
+        <p class="switch-popup">
+            ¿Ya tienes una cuenta? <a href="javascript:void(0)" onclick="closePopup('register-popup'); openPopup('login-popup')">Inicia sesión aquí</a>
+        </p>
+    </div>
+</div>
