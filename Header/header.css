@@ -76,8 +76,10 @@
     color: #FFEB3B;
 }
 
+
+
 /* Botón de inicio de sesión - Pantallas grandes */
-.desktop-login {
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,6 +105,70 @@
     background-color: white;
     color: #009688;
 }
+
+
+#options-container {
+    display: none;
+}
+
+
+.options-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-trigger span {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #009688;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 9999;
+    padding: 10px 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: white;
+    color: #009688;
+}
+
+
+
+
+
+
+
 
 /* Menú hamburguesa - Pantallas pequeñas */
 .hamburger-menu {
@@ -159,8 +225,9 @@
 /* Responsividad */
 @media (max-width: 768px) {
     .desktop-nav,
-    .desktop-login {
-        display: none;
+    .desktop-login,
+    .options-menu{
+        display: none !important;
     }
 
     .hamburger-menu {

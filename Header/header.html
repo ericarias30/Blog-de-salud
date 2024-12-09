@@ -13,10 +13,25 @@
             <a href="/Subpages/salud_mental.html" class="nav-link" data-section="saludmental">Salud Mental</a>
         </nav>
 
-        <!-- Botón de inicio de sesión o cierre de sesión -->
-        <div class="login">
-            <a href="javascript:void(0)" class="login-button" onclick="toggleLoginLogout()">Iniciar sesión</a>
+        <!-- Botón de inicio de sesión -->
+        <div id="login-container" class="login desktop-login">
+            <a  class="login-button" onclick="openLoginPopup()">Iniciar sesión</a>
         </div>
+
+        
+        <!-- Menú de opciones -->
+        <div id="options-container" class="options-menu">
+            <div class="dropdown-trigger" onclick="toggleDropdown()">
+                <span id="user-name">Usuario</span>
+                <span id="dropdown-arrow" class="arrow">▼</span>
+            </div>
+            <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
+                <a href="javascript:void(0)" onclick="logout()">Cerrar sesión</a>
+                <a href="javascript:void(0)">Guardados</a>
+            </div>
+        </div>
+
+
 
         <!-- Botón de menú hamburguesa para pantallas pequeñas -->
         <div class="hamburger-menu" onclick="toggleMenu()">
@@ -31,8 +46,12 @@
             <a href="/Subpages/nutricion.html" class="nav-link" data-section="nutricion">Nutrición</a>
             <a href="/Subpages/ejercicio.html" class="nav-link" data-section="ejercicio">Ejercicio</a>
             <a href="/Subpages/salud_mental.html" class="nav-link" data-section="saludmental">Salud Mental</a>
-            <a href="javascript:void(0)" class="nav-link login-button" onclick="toggleLoginLogout()">Iniciar sesión</a>
+            <a href="javascript:void(0)" id="login-mobile-button" class="nav-link">Iniciar sesión</a>
+            <a href="/" id="saved-link-mobile" class="nav-link" style="display: none;">Guardados</a>
         </nav>
+        
+        
+
     </div>
 </div>
 
@@ -54,6 +73,7 @@
     </div>
 </div>
 
+
 <!-- Ventana emergente de registro -->
 <div id="register-popup" class="popup">
     <div class="popup-content">
@@ -69,7 +89,7 @@
             <button type="submit">Registrarse</button>
         </form>
         <p class="switch-popup">
-            ¿Ya tienes una cuenta? <a href="javascript:void(0)" onclick="closePopup('register-popup'); openPopup('login-popup')">Inicia sesión aquí</a>
+            ¿Ya tienes una cuenta? <a href="javascript:void(0)" onclick="closePopup('register-popup'); openLoginPopup()">Inicia sesión aquí</a>
         </p>
     </div>
 </div>
