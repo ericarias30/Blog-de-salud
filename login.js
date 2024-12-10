@@ -1,16 +1,17 @@
 // Verificar y aplicar el estado de sesión al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    const loggedInStatus = localStorage.getItem('isLoggedIn');
-    const userName = localStorage.getItem('userName');
+document.addEventListener("DOMContentLoaded", () => {
+    const loggedInStatus = localStorage.getItem("isLoggedIn");
+    const userName = localStorage.getItem("userName");
 
-    if (loggedInStatus === 'true' && userName) {
-        console.log('Estado: Usuario logueado');
-        showLoggedInState(userName);
+    if (loggedInStatus === "true" && userName) {
+        console.log("Estado: Usuario logueado");
+        actualizarEstadoSesion();
     } else {
-        console.log('Estado: Usuario no logueado');
-        showLoggedOutState();
+        console.log("Estado: Usuario no logueado");
+        actualizarEstadoSesion();
     }
 });
+
 
 // Función para abrir un popup en general (para login y registro)
 function openPopup(popupId) {
@@ -56,37 +57,34 @@ function closePopup(id) {
 
 // Manejar el inicio de sesión
 function handleLogin() {
-    const loginEmail = document.getElementById('login-email').value;
-    const userName = loginEmail.split('@')[0] || 'Usuario'; // Extraer el nombre del email
+    const loginEmail = document.getElementById("login-email").value;
+    const userName = loginEmail.split("@")[0] || "Usuario";
 
-    console.log('Iniciando sesión con usuario:', userName);
+    console.log("Iniciando sesión con usuario:", userName);
 
     // Guardar estado en localStorage
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('userName', userName);
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("userName", userName);
 
-    showLoggedInState(userName); // Actualizar la interfaz a usuario logueado
-    closePopup('login-popup');  // Cerrar el popup de login
+    actualizarEstadoSesion();
+    closePopup("login-popup");
 }
 
-// Manejar el registro de usuario
 function handleRegister() {
-    const registerEmail = document.getElementById('register-email').value;
-    const userName = document.getElementById('register-name').value;
+    const registerEmail = document.getElementById("register-email").value;
+    const userName = document.getElementById("register-name").value;
 
-    console.log('Registrando usuario:', userName);
+    console.log("Registrando usuario:", userName);
 
-    // Guardar datos de registro en localStorage
-    localStorage.setItem('userEmail', registerEmail);
-    localStorage.setItem('userName', userName);
+    localStorage.setItem("userEmail", registerEmail);
+    localStorage.setItem("userName", userName);
 
-    // Simular que se completó el registro y redirigir a login
-    alert('Registro exitoso! Ahora puedes iniciar sesión.');
-    closePopup('register-popup');
+    alert("Registro exitoso! Ahora puedes iniciar sesión.");
+    closePopup("register-popup");
     openLoginPopup();
 }
 
-function showLoggedInState(userName) {
+function showLoggedInState() {
     const loginContainer = document.getElementById('login-container');
     const optionsContainer = document.getElementById('options-container');
     const userNameElement = document.getElementById('user-name');
@@ -94,10 +92,10 @@ function showLoggedInState(userName) {
 
     if (loginContainer) loginContainer.style.display = 'none'; // Ocultar botón de login
     if (optionsContainer) optionsContainer.style.display = 'flex'; // Mostrar menú de opciones
-    if (userNameElement) userNameElement.textContent = userName; // Mostrar nombre del usuario
+    if (userNameElement) userNameElement.textContent = 'Opciones'; // Mostrar texto "Opciones"
     if (savedLinkMobile) savedLinkMobile.style.display = 'block'; // Mostrar enlace "Guardados" móvil
 
-    console.log('Usuario logueado:', userName);
+    console.log('Usuario logueado');
 }
 
 function showLoggedOutState() {
@@ -115,25 +113,53 @@ function showLoggedOutState() {
 
 // Cerrar sesión
 function logout() {
-    console.log('Cerrando sesión...');
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('userName');
-    localStorage.removeItem('userEmail');
-    showLoggedOutState();
+    console.log("Cerrando sesión...");
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
+    actualizarEstadoSesion();
 }
 
-// Alternar el menú desplegable
-function toggleDropdown() {
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    const arrow = document.getElementById('dropdown-arrow');
+function actualizarEstadoSesion() {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const userName = localStorage.getItem("userName") || "Opciones";
 
-    if (dropdownMenu) {
-        const isVisible = dropdownMenu.style.display === 'block';
-        dropdownMenu.style.display = isVisible ? 'none' : 'block';
+    const loginContainer = document.querySelector("#login-container");
+    const optionsContainer = document.querySelector("#options-container");
+    const userNameSpan = document.querySelector("#user-name");
 
-        if (arrow) arrow.classList.toggle('open', !isVisible);
+    if (isLoggedIn) {
+        if (loginContainer) loginContainer.style.display = "none";
+        if (optionsContainer) optionsContainer.style.display = "flex";
+        if (userNameSpan) userNameSpan.textContent = userName;
+    } else {
+        if (loginContainer) loginContainer.style.display = "block";
+        if (optionsContainer) optionsContainer.style.display = "none";
     }
 }
 
+function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.style.display = "flex";
+    }
+}
+
+function closePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) popup.style.display = "none";
+}
+
+function toggleDropdown() {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    const arrow = document.getElementById("dropdown-arrow");
+
+    if (dropdownMenu) {
+        const isVisible = dropdownMenu.style.display === "block";
+        dropdownMenu.style.display = isVisible ? "none" : "block";
+
+        if (arrow) arrow.classList.toggle("open", !isVisible);
+    }
+}
 
 

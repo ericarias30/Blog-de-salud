@@ -188,22 +188,25 @@
     border-radius: 2px;
 }
 
-/* Estilo para la navegación móvil */
 .mobile-nav {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
     flex-direction: column;
-    position: absolute; /* Permite posicionarlo respecto al header */
-    top: 100%; /* Asegura que se coloque justo debajo del header */
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     background-color: #009688;
-    z-index: 999; /* Asegura que esté encima de otros elementos si es necesario */
+    z-index: 999;
     padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra para separarlo visualmente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: visibility 0.3s ease, opacity 0.3s ease;
 }
 
 .mobile-nav.active {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
 }
 
 .mobile-nav .nav-link {

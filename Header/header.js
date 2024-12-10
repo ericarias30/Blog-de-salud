@@ -16,8 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            // Inicializar estado de sesión después de cargar el header
-            inicializarEstadoSesion();
+            // Inicializar eventos y actualizar el estado de sesión
+            inicializarEventosHeader();
+            actualizarEstadoSesion(); // Desde login.js
         })
         .catch((error) => console.error("Error al cargar el header:", error));
 });
@@ -46,23 +47,42 @@ function inicializarEstadoSesion() {
 // Actualizar el estado de inicio de sesión
 function actualizarEstadoSesion() {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-    const userName = localStorage.getItem("userName");
 
     const loginContainer = document.querySelector("#login-container");
     const optionsContainer = document.querySelector("#options-container");
     const userNameSpan = document.querySelector("#user-name");
 
-    if (isLoggedIn && userName) {
+    if (isLoggedIn) {
         // Usuario está logueado
-        if (loginContainer) loginContainer.style.display = "none";  // Ocultar el botón de "Iniciar sesión"
+        if (loginContainer) loginContainer.style.display = "none";  // Ocultar botón de "Iniciar sesión"
         if (optionsContainer) optionsContainer.style.display = "flex";  // Mostrar el menú de opciones
-        if (userNameSpan) userNameSpan.textContent = userName;  // Mostrar el nombre del usuario
+        if (userNameSpan) userNameSpan.textContent = "Opciones";  // Mostrar "Opciones"
     } else {
         // Usuario no está logueado
-        if (loginContainer) loginContainer.style.display = "block";  // Mostrar el botón de "Iniciar sesión"
+        if (loginContainer) loginContainer.style.display = "block";  // Mostrar botón de "Iniciar sesión"
         if (optionsContainer) optionsContainer.style.display = "none";  // Ocultar el menú de opciones
     }
 }
+
+
+// Inicializar eventos del header
+function inicializarEventosHeader() {
+    // Evento para cerrar sesión
+    const logoutButton = document.querySelector("#dropdown-menu a[data-action='logout']");
+    if (logoutButton) {
+        logoutButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            logout(); // Función en login.js
+        });
+    }
+
+    // Evento para alternar el menú desplegable
+    const dropdownToggle = document.getElementById("dropdown-toggle");
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener("click", toggleDropdown);
+    }
+}
+
 
 // Función para cerrar sesión
 function logout() {

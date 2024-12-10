@@ -20,9 +20,9 @@
 
         
         <!-- Menú de opciones -->
-        <div id="options-container" class="options-menu">
+        <div id="options-container" class="options-menu" style="display: none;">
             <div class="dropdown-trigger" onclick="toggleDropdown()">
-                <span id="user-name">Usuario</span>
+                <span id="user-name">Opciones</span>
                 <span id="dropdown-arrow" class="arrow">▼</span>
             </div>
             <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
@@ -30,6 +30,7 @@
                 <a href="javascript:void(0)">Guardados</a>
             </div>
         </div>
+        
 
 
 
@@ -46,7 +47,7 @@
             <a href="/Subpages/nutricion.html" class="nav-link" data-section="nutricion">Nutrición</a>
             <a href="/Subpages/ejercicio.html" class="nav-link" data-section="ejercicio">Ejercicio</a>
             <a href="/Subpages/salud_mental.html" class="nav-link" data-section="saludmental">Salud Mental</a>
-            <a href="javascript:void(0)" id="login-mobile-button" class="nav-link">Iniciar sesión</a>
+            <a href="javascript:void(0)" id="login-mobile-button" onclick="openLoginPopup()" class="nav-link">Iniciar sesión</a>
             <a href="/" id="saved-link-mobile" class="nav-link" style="display: none;">Guardados</a>
         </nav>
         
