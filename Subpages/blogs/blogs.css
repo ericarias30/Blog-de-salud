@@ -24,7 +24,7 @@ main {
     padding-top: 2%;
     background-color: white;
     font-family: 'Roboto', sans-serif; /* Aplica la fuente Roboto */
-    width: 1000px;
+    width: 100%;
 }
 
 
@@ -109,6 +109,25 @@ main {
     font-style: italic;
 }
 
+/* Responsividad para el banner */
+@media (max-width: 768px) {
+    /* Ajustar la barra de búsqueda */
+    .busqueda {
+        width: 90%; /* Hacer que la barra de búsqueda ocupe un ancho relativo */
+    }
+
+    .busqueda button {
+        width: 120px; /* Reducir el ancho del botón */
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    }
+
+    .busqueda input {
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    }
+
+}
+
+
 
 
 
@@ -117,18 +136,18 @@ main {
 
 /* Contenedor principal del artículo */
 .blog-post {
-    width: 900px;
-    margin: 5% auto;
-    
+    width: 90%;
+    margin: 0 auto;
     padding: 1%;
 }
 
 /* Título principal */
 .blog-post h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
     color: #2c3e50;
+    text-align: center;
 }
 
 /* Imagen destacada del post */
@@ -156,8 +175,20 @@ main {
     margin-right: 5px;
 }
 
-.info .eye i {
+.info .coment i {
     margin-right: 5px;
+}
+
+.videollamada a {
+    text-decoration: none; /* Evita que el enlace tenga subrayado */
+    color: #000; /* Ajusta el color según tu diseño */
+}
+
+.videollamada a:hover {
+    color: #007BFF; /* Color cuando pasa el mouse */
+}
+html {
+    scroll-behavior: smooth;
 }
 
 .info .guardar {
@@ -176,6 +207,43 @@ hr{
 }
 
 
+@media (max-width: 768px) {
+    /* Contenedor principal */
+    .blog-post {
+        width: 90%; /* Ajusta el ancho del contenedor al 90% */
+        margin: 0 auto;
+        padding: 2%; /* Un poco más de padding en pantallas pequeñas */
+    }
+
+    /* Título principal */
+    .blog-post h1 {
+        font-size: 1.4rem; /* Reducir el tamaño del título */
+        text-align: center; /* Centra el título en pantallas pequeñas */
+    }
+
+    /* Imagen destacada del post */
+    .post-image img {
+        width: 100%; /* Ajusta la imagen al 100% del contenedor en dispositivos pequeños */
+        max-width: 400px; /* Limita el tamaño máximo de la imagen */
+        margin: 0 auto; /* Centra la imagen */
+    }
+
+    /* Información de autor, vista y guardar */
+    .info {
+        width: 90%;
+    }
+
+    .info .videollamada .texto {
+        display: none; /* Ocultar solo el texto */
+    }
+
+    /* Separador horizontal */
+    hr {
+        width: 90%; /* Reduce el ancho de la línea */
+        margin: 1% auto;
+    }
+}
+
 
 /* Estilos Generales */
 .post-content {
@@ -183,6 +251,8 @@ hr{
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
+    padding: 0 10px; /* Asegura que haya espacio en pantallas pequeñas */
+    max-width: 1200px; /* Limita el ancho máximo */
 }
 
 /* Títulos principales */
@@ -231,13 +301,12 @@ hr{
     margin: 1.5rem 0;
 }
 
-/* Imágenes con ancho fijo y altura automática */
 .image-container img {
-    width: 600px; /* Ancho fijo */
-    height: auto; /* La altura se ajusta proporcionalmente */
+    width: 100%; /* Hace que la imagen ocupe todo el ancho disponible */
+    max-width: 600px; /* Ancho máximo para pantallas grandes */
+    height: auto;
     border-radius: 8px;
 }
-
 /* Subtítulo debajo de la imagen */
 .image-container .caption {
     display: block;
@@ -252,10 +321,10 @@ hr{
     margin: 2rem 0;
 }
 
-/* Video con ancho fijo y altura proporcional */
-.post-media video {
-    width: 600px; /* Ancho fijo para el video */
-    height: auto; /* La altura se ajusta proporcionalmente */
+/* Video responsivo */
+.post-media iframe {
+    width: 100%;
+    height: 315px; /* Ajusta la altura para mantener la relación 16:9 */
     border-radius: 8px;
 }
 
@@ -298,17 +367,18 @@ h2 + ul {
 .event-header {
     display: flex;
     align-items: center;
+    
 }
 
 /* Estilo para la imagen del evento */
 .event-image {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
     margin-right: 20px;
 }
-
 /* Estilo para los detalles del evento */
 .event-details {
     flex-grow: 1;
@@ -343,6 +413,7 @@ h2 + ul {
     display: flex;
     justify-content: center; /* Centra los botones horizontalmente */
     gap: 10px; /* Espaciado uniforme entre los botones */
+    flex-wrap: wrap; /* Permite que los botones se acomoden mejor en pantallas pequeñas */
 }
 
 .event-buttons .btn {
@@ -375,6 +446,136 @@ h2 + ul {
 }
 
 
+/* En pantallas grandes */
+@media (min-width: 769px) {
+
+    /* Ajustar el contenedor del iframe */
+    .post-media {
+        position: relative;
+        width: 60%; /* Usar un porcentaje más pequeño para que no ocupe todo el ancho */
+        max-width: 800px; /* Definir un ancho máximo para evitar desbordes en pantallas muy grandes */
+        padding-bottom: 33.75%; /* Relación de aspecto personalizada, más ancha */
+        margin: 20px auto; /* Centrado horizontal con un margen superior */
+        overflow: hidden;
+    }
+
+    .post-media iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+/* En pantallas pequeñas */
+@media (max-width: 768px) {
+
+    /* Hacer que el iframe se adapte al contenedor */
+    .post-media {
+        position: relative;
+        width: 90%;
+        padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .post-media iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Ajustar las imágenes para pantallas pequeñas */
+    .image-container img {
+        width: 100%;
+        max-width: 100%; /* Asegura que las imágenes ocupen todo el ancho */
+    }
+
+    /* Ajustar el tamaño de las tarjetas del evento */
+    .event-card {
+        width: 100%;
+        margin: 15px auto;
+        padding: 10px;
+    }
+
+    /* Asegurarse de que el encabezado del evento se acomode mejor */
+    .event-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Estilo para la información del autor y la fecha */
+    .event-info, .event-card h3 {
+        text-align: center;
+    }
+
+    /* Botones ocupando todo el ancho en pantallas pequeñas */
+    .event-buttons .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Ajuste de tamaños de texto */
+    .post-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .post-content p,
+    .post-content li {
+        font-size: 0.9rem; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    }
+
+
+    .post-content h3, .post-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .event-info {
+        font-size: 0.8rem;
+    }
+
+    /* Imágenes de eventos más pequeñas y adaptadas */
+    .event-image {
+        width: 100%;
+        height: auto;
+        max-width: 300px; /* Limita el tamaño en pantallas pequeñas */
+        display: block; /* Asegura que la imagen se trate como un bloque */
+        margin: 0 auto; /* Centra la imagen horizontalmente */
+    }
+
+}
+
+/* Para pantallas aún más pequeñas (como móviles) */
+@media (max-width: 480px) {
+    /* Se ajustan los márgenes y las dimensiones para móviles */
+    .post-content {
+        padding: 0 5px;
+    }
+
+    .event-card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .event-image {
+        max-width: 150px; /* Ajusta la imagen aún más para pantallas muy pequeñas */
+    }
+
+    
+
+    .post-content h2 {
+        font-size: 1rem;
+    }
+
+    .event-buttons .btn {
+        font-size: 0.9rem;
+    }
+}
 
 
 
@@ -501,4 +702,59 @@ blockquote footer {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+
+
+
+/* Responsividad para pantallas pequeñas (768px o menos) */
+
+/* Estilo para las citas de testimonios */
+@media (max-width: 768px) {
+    .testimonials {
+        max-width: 100%;
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+
+    .testimonials h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    blockquote {
+        font-size: 0.9rem; /* Reducir el tamaño de fuente en pantallas pequeñas */
+    }
+
+    blockquote footer {
+        text-align: center;
+    }
+
+    #testimonials-form button {
+        width: 60%; /* Botón más grande para facilitar su uso en pantallas pequeñas */
+    }
+    /* Ajustar el footer */
+    .footer-container {
+        max-width: 100%; /* Hacer que el footer ocupe el 100% del ancho */
+        padding: 0 15px; /* Agregar algo de espacio en los bordes */
+    }
+
+    .footer p {
+        font-size: 0.8rem; /* Reducir el tamaño de la fuente */
+    }
+
+    .footer-links a {
+        font-size: 0.9rem; /* Ajustar el tamaño de los enlaces */
+    }
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .footer p {
+        font-size: 0.6rem; /* Reducir aún más el tamaño de la fuente */
+    }
+
+    .footer-links a {
+        font-size: 0.7rem; /* Reducir el tamaño de los enlaces */
+    }
 }

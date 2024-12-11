@@ -2,7 +2,7 @@
     <div class="header-container">
         <!-- Logo -->
         <div class="logo" onclick="window.location.href='/index.html';">
-            <img src="/Imagenes/icono-sinfondo.png" alt="Logo">
+            <img src="/Imagenes/icono-sinfondo - copia 2.png" alt="Logo">
         </div>
 
         <!-- Enlaces para pantallas grandes -->
@@ -27,7 +27,7 @@
             </div>
             <div id="dropdown-menu" class="dropdown-menu" style="display: none;">
                 <a href="javascript:void(0)" onclick="logout()">Cerrar sesión</a>
-                <a href="javascript:void(0)">Guardados</a>
+                <a href="/Subpages/guardados.html" id="saved-link-mobile" class="nav-link">Guardados</a>
             </div>
         </div>
         
@@ -48,7 +48,7 @@
             <a href="/Subpages/ejercicio.html" class="nav-link" data-section="ejercicio">Ejercicio</a>
             <a href="/Subpages/salud_mental.html" class="nav-link" data-section="saludmental">Salud Mental</a>
             <a href="javascript:void(0)" id="login-mobile-button" onclick="openLoginPopup()" class="nav-link">Iniciar sesión</a>
-            <a href="/" id="saved-link-mobile" class="nav-link" style="display: none;">Guardados</a>
+            <a href="/Subpages/guardados.html" id="saved-link-mobile" class="nav-link" style="display: none;">Guardados</a>
         </nav>
         
         
@@ -57,16 +57,19 @@
 </div>
 
 <!-- Ventana emergente de inicio de sesión -->
-<div id="login-popup" class="popup">
+<div id="login-popup" class="popup" role="dialog" aria-labelledby="login-popup-title" aria-hidden="true">
     <div class="popup-content">
-        <span class="close" onclick="closePopup('login-popup')">&times;</span>
-        <h2>Iniciar Sesión</h2>
-        <form id="login-form">
-            <label for="login-email">Correo Electrónico:</label>
-            <input type="email" id="login-email" required>
+        <span class="close" onclick="closePopup('login-popup')" aria-label="Cerrar">&times;</span>
+        <h2 id="login-popup-title">Iniciar sesión</h2>
+        <form id="login-form" aria-labelledby="login-popup-title">
+            <label for="login-email">Correo electrónico:</label>
+            <input type="email" id="login-email" placeholder="ejemplo@dominio.com" required aria-required="true" aria-label="Correo electrónico">
             <label for="login-password">Contraseña:</label>
-            <input type="password" id="login-password" required>
-            <button type="submit">Iniciar Sesión</button>
+            <input type="password" id="login-password" placeholder="********" required aria-required="true" aria-label="Contraseña">
+            <div class="form-buttons">
+                <button type="submit">Iniciar sesión</button>
+                <button type="button" onclick="closePopup('login-popup')" aria-label="Cancelar">Cancelar</button>
+            </div>
         </form>
         <p class="switch-popup">
             ¿No tienes una cuenta? <a href="javascript:void(0)" onclick="closePopup('login-popup'); openPopup('register-popup')">Regístrate aquí</a>
@@ -74,23 +77,26 @@
     </div>
 </div>
 
-
 <!-- Ventana emergente de registro -->
-<div id="register-popup" class="popup">
+<div id="register-popup" class="popup" role="dialog" aria-labelledby="register-popup-title" aria-hidden="true">
     <div class="popup-content">
-        <span class="close" onclick="closePopup('register-popup')">&times;</span>
-        <h2>Registro</h2>
-        <form id="register-form">
+        <span class="close" onclick="closePopup('register-popup')" aria-label="Cerrar">&times;</span>
+        <h2 id="register-popup-title">Registro</h2>
+        <form id="register-form" aria-labelledby="register-popup-title">
             <label for="register-email">Correo Electrónico:</label>
-            <input type="email" id="register-email" required>
+            <input type="email" id="register-email" placeholder="ejemplo@dominio.com" required aria-required="true" aria-label="Correo electrónico">
             <label for="register-name">Nombre:</label>
-            <input type="text" id="register-name" required>
+            <input type="text" id="register-name" placeholder="Tu nombre completo" required aria-required="true" aria-label="Nombre">
             <label for="register-password">Contraseña:</label>
-            <input type="password" id="register-password" required>
-            <button type="submit">Registrarse</button>
+            <input type="password" id="register-password" placeholder="********" required aria-required="true" aria-label="Contraseña">
+            <div class="form-buttons">
+                <button type="submit">Registrarse</button>
+                <button type="button" onclick="closePopup('register-popup')" aria-label="Cancelar">Cancelar</button>
+            </div>
         </form>
         <p class="switch-popup">
             ¿Ya tienes una cuenta? <a href="javascript:void(0)" onclick="closePopup('register-popup'); openLoginPopup()">Inicia sesión aquí</a>
         </p>
     </div>
 </div>
+

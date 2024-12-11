@@ -169,8 +169,15 @@ main {
 @media (max-width: 768px) {
     .articulos-grid {
         grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        max-width: 95%; /* Limita el ancho al 90% en móviles */
+        margin: 0 auto; /* Asegura que el grid esté centrado */
     }
+    h2 {
+        font-size: 1.2rem; /* Puedes ajustar este valor */
+    }
+
 }
+
 
 /* Tarjetas */
 .articulo {
@@ -201,7 +208,7 @@ main {
 .articulo h3 {
     font-size: 1.2rem;
     margin: 5px 10px;
-    color: #34495e;
+    color: #2c3e50;
     word-wrap: break-word;
     min-height: 3em; /* Consistencia en altura */
     display: flex;
@@ -230,7 +237,7 @@ main {
     justify-content: space-between;
     align-items: center;
     font-size: 0.8rem;
-    color: black;
+    color: #2c3e50;
     width: 80%; /* Coincide con el ancho de la imagen */
     box-sizing: border-box; /* Asegura que el padding se incluya dentro del ancho */
     margin: 2% auto; /* Centra el bloque de información */
@@ -238,6 +245,27 @@ main {
 
 .info i {
     margin-right: 5px; /* Espaciado entre el ícono y el texto dentro de cada `span` */
+}
+
+/* Estilos para el ícono de guardar */
+.info .guardar {
+    cursor: pointer; /* Cambia el cursor a un puntero cuando se pasa por encima */
+    transition: color 0.3s, transform 0.3s; /* Transición suave para el cambio de color */
+}
+
+/* Cuando el ícono está guardado (lleno y verde) */
+.info .guardar.saved i {
+    color: #16a085; /* Color verde */
+    transform: scale(1.2); /* Agrandar el ícono al marcarlo */
+}
+
+/* Hover */
+.info .guardar:hover i {
+    color: #16a085; /* Color de hover cuando el usuario pasa el ratón sobre el ícono */
+}
+
+.info .guardar i.saved {
+    color: #16a085 !important; /* Verde */
 }
 
 .articulo hr {
@@ -280,6 +308,31 @@ main {
 .articulo button:hover {
     background-color: #16a085;
 }
+
+
+@media (max-width: 768px) {
+
+    .articulo h3{
+        font-size: 1rem; /* Puedes ajustar este valor */
+    }
+
+    .articulo p {
+        font-size: 0.8rem;
+
+    }
+
+    .articulo button {
+        padding: 8px 16px; /* Reduce el padding */
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    }
+
+    .info .videollamada .texto {
+        display: none; /* Ocultar solo el texto */
+    }
+}
+
+
+
 
 
 .footer {
@@ -375,10 +428,14 @@ main {
 /* Responsividad para pantallas más pequeñas */
 @media (max-width: 480px) {
     .footer p {
-        font-size: 0.7rem; /* Reducir aún más el tamaño de la fuente */
+        font-size: 0.6rem; /* Reducir aún más el tamaño de la fuente */
     }
 
     .footer-links a {
-        font-size: 0.8rem; /* Reducir el tamaño de los enlaces */
+        font-size: 0.7rem; /* Reducir el tamaño de los enlaces */
+    }
+
+    .banner blockquote {
+        font-size: 1rem;
     }
 }

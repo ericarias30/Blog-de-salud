@@ -13,6 +13,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Función para manejar el clic en el ícono de guardar
+function handleSaveClick(event, element) {
+    const loggedInStatus = localStorage.getItem("isLoggedIn");
+
+    if (loggedInStatus === "true") {
+        toggleBookmarkIcon(element); // Cambiar el ícono si el usuario está logueado
+    } else {
+        openLoginPopup(); // Abrir el popup de login si el usuario no está logueado
+    }
+}
+
+// Cambiar el ícono de guardar al clickeado
+function toggleBookmarkIcon(element) {
+    const bookmarkIcon = element.querySelector("i"); // Seleccionar el ícono dentro del elemento clickeado
+
+    if (bookmarkIcon.classList.contains("far")) {
+        bookmarkIcon.classList.remove("far");
+        bookmarkIcon.classList.add("fas");
+    } else {
+        bookmarkIcon.classList.remove("fas");
+        bookmarkIcon.classList.add("far");
+    }
+}
+
+
 // Función para abrir un popup en general (para login y registro)
 function openPopup(popupId) {
     const popup = document.getElementById(popupId);
@@ -70,6 +95,27 @@ function handleLogin() {
     closePopup("login-popup");
 }
 
+// Función para manejar el clic en el ícono de guardar
+function toggleSavedIcon(event) {
+    const icon = event.target; // Selecciona el ícono que fue clickeado
+    
+    if (icon.tagName === 'I') { // Verifica que sea un ícono
+        // Alterna la clase 'fas' y 'far' en el ícono clickeado
+        if (icon.classList.contains('far')) {
+            icon.classList.remove('far');
+            icon.classList.add('fas');
+        } else {
+            icon.classList.remove('fas');
+            icon.classList.add('far');
+        }
+    }
+}
+
+// Asignar el evento de clic a todos los íconos de guardar
+document.querySelectorAll('.guardar i').forEach((icon) => {
+    icon.addEventListener('click', toggleSavedIcon);
+});
+
 function handleRegister() {
     const registerEmail = document.getElementById("register-email").value;
     const userName = document.getElementById("register-name").value;
@@ -111,14 +157,21 @@ function showLoggedOutState() {
 }
 
 
-// Cerrar sesión
 function logout() {
     console.log("Cerrando sesión...");
+
+    // Eliminar datos de sesión
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userName");
     localStorage.removeItem("userEmail");
+
+    // Actualizar estado de sesión
     actualizarEstadoSesion();
+
+    // Recargar la página para reflejar cambios
+    location.reload();
 }
+
 
 function actualizarEstadoSesion() {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
@@ -162,4 +215,12 @@ function toggleDropdown() {
     }
 }
 
-
+// Cerrar popups al presionar "Escape"
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        const openPopups = document.querySelectorAll(".popup[style*='display: flex']");
+        openPopups.forEach((popup) => {
+            popup.style.display = "none";
+        });
+    }
+})

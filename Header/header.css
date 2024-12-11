@@ -267,7 +267,6 @@
 
 
 
-/* Popups */
 .popup {
     display: none;
     position: fixed;
@@ -275,30 +274,36 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(2, 48, 72, 0.3); /* Azul oscuro translúcido */
     justify-content: center;
     align-items: center;
     z-index: 2000;
 }
 
 .popup-content {
-    background: white;
+    position: relative; /* Asegurar posicionamiento correcto de la cruz */
+    background: #E5E5E5;
     padding: 20px;
     border-radius: 8px;
     width: 90%;
     max-width: 400px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2001; /* Asegurarse de que el contenido del popup esté por encima del fondo */
 }
 
 .popup-content h2 {
     margin-bottom: 20px;
-    color: #007BFF;
+    color: #023048; /* Azul oscuro */
+    font-size: 24px;
 }
 
 .popup-content form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #023048; /* Azul oscuro */
+    text-align: left; /* Alinear los títulos a la derecha */
 }
 
 .popup-content form input {
@@ -309,8 +314,8 @@
     border-radius: 5px;
 }
 
-.popup-content button {
-    background-color: #007BFF;
+.popup-content .form-buttons button[type="submit"] {
+    background-color: #009688; /* Verde turquesa */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -320,21 +325,50 @@
     transition: background-color 0.3s;
 }
 
-.popup-content button:hover {
-    background-color: #0056b3;
+.popup-content .form-buttons button[type="submit"]:hover {
+    background-color: #00695c; /* Verde turquesa más oscuro */
+}
+
+.popup-content .form-buttons button[type="button"] {
+    background-color: #ce2c2c; /* Rojo suave */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup-content .form-buttons button[type="button"]:hover {
+    background-color: #ac2222; /* Rojo más oscuro */
 }
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 18px;
+    top: 1%;
+    right: 3%;
+    font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #01316e; /* Azul oscuro */
     cursor: pointer;
     transition: color 0.3s;
 }
 
 .close:hover {
-    color: red;
+    color: #ff4d4d; /* Rojo para indicar cierre */
+}
+.switch-popup{
+    margin-top: 3%;
+}
+
+.switch-popup a {
+    
+    color: #017fa8; /* Turquesa */
+    text-decoration: none;
+}
+
+.switch-popup a:hover {
+    color: #01316e; /* Azul oscuro */
+    text-decoration: underline;
 }
